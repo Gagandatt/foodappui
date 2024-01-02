@@ -1,0 +1,16 @@
+<!-- restaurant-list.component.html -->
+
+<div class="restaurant-list-container">
+  <h2>Restaurant List</h2>
+  <div class="restaurant-grid">
+    <div *ngFor="let restaurant of restaurants" class="restaurant-card">
+      <img [src]="restaurant.image || 'https://via.placeholder.com/150'" alt="{{ restaurant.name }}" class="restaurant-image">
+      <div class="restaurant-details">
+        <p class="restaurant-name">{{ restaurant.name }}</p>
+        <p class="restaurant-cuisine">{{ restaurant.cuisine }}</p>
+        <p class="restaurant-address">{{ restaurant.address }}</p>
+        <button mat-raised-button color="primary" [routerLink]="['/restaurant', restaurant.name.toLowerCase().replace(' ', '-')]">Go to Restaurant</button>
+      </div>
+    </div>
+  </div>
+</div>
